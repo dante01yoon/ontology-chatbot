@@ -1,7 +1,7 @@
 // runs/results.jsonl → 모드별·난이도별 정답률과 평균 비용
 import fs from 'node:fs';
 const rows = fs.readFileSync(new URL('runs/results.jsonl', import.meta.url), 'utf8').trim().split('\n').map(JSON.parse);
-const LABEL = { schema: '스키마만', ontology: '+온톨로지', guide: '+데이터 설명서' };
+const LABEL = { schema: '스키마만', ontology: '+온톨로지', guide: '+데이터 설명서', built: '+직접 만든 온톨로지' };
 const LV = ['LQLS', 'LQHS', 'HQLS', 'HQHS'];
 const pct = (g) => g.length ? `${(g.filter((r) => r.ok).length / g.length * 100).toFixed(0)}%` : '-';
 console.log('모드'.padEnd(12), '전체', ...LV.map((l) => l.padStart(6)), '  비용($)', '회');

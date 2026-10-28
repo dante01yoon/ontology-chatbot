@@ -8,7 +8,7 @@ import { open, goldRows, same } from './oracle/grade.mjs';
 const args = process.argv.slice(2);
 const opt = (k, d) => { const i = args.indexOf(k); return i < 0 ? d : args.splice(i, 2)[1]; };
 const reps = Number(opt('--reps', 3)), par = Number(opt('--parallel', 4));
-const modes = args.length ? args : ['schema', 'ontology', 'guide'];
+const modes = args.length ? args : ['schema', 'ontology', 'guide', 'built'];
 const Q = JSON.parse(fs.readFileSync(new URL('oracle/questions.json', import.meta.url)));
 const db = open(new URL('data/acme.db', import.meta.url).pathname);
 fs.mkdirSync(new URL('runs/', import.meta.url), { recursive: true });
