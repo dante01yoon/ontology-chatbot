@@ -1,0 +1,5 @@
+{
+  "name": "ontology-chatbot",
+  "type": "module",
+  "scripts": { "db": "node scripts/build-db.mjs" }
+}
